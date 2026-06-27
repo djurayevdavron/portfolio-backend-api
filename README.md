@@ -9,7 +9,7 @@ REST API for managing portfolio projects and contact messages | Portfolio loyiha
 * Get project by ID | Loyihani ID orqali olish
 * Update existing projects | Mavjud loyihalarni yangilash
 * Delete projects | Loyihalarni o'chirish
-* Send contact messages directly to email | Xabarlarni to'g'ridan-to'g'ri emailga yuborish
+* Send contact messages directly to email using Brevo SMTP | Brevo SMTP orqali email yuborish
 * MongoDB database integration | MongoDB ma'lumotlar bazasi integratsiyasi
 * Environment variables support | Muhit o'zgaruvchilari qo'llab-quvvatlanadi
 
@@ -20,7 +20,7 @@ REST API for managing portfolio projects and contact messages | Portfolio loyiha
 * MongoDB
 * Mongoose
 * Nodemailer
-* Gmail SMTP
+* Brevo SMTP
 * Dotenv
 * CORS
 
@@ -94,8 +94,11 @@ Create a `.env` file and add the following variables | `.env` fayl yarating va q
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_google_app_password
+SMTP_HOST=smtp-relay.brevo.com
+SMTP_PORT=2525
+SMTP_EMAIL=your_brevo_smtp_login
+SMTP_PASSWORD=your_brevo_smtp_password
+SENDER_EMAIL=your_verified_sender_email
 ```
 
 ## Author | Muallif
