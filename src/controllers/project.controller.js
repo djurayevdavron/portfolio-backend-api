@@ -10,7 +10,6 @@ export const getProjects = async (req, res) => {
       message: error.message,
     });
   }
-  
 };
 export const createProject = async (req, res) => {
   try {
@@ -42,14 +41,10 @@ export const getProjectById = async (req, res) => {
 };
 export const updateProject = async (req, res) => {
   try {
-    const project = await Project.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      {
-        new: true,
-        runValidators: true,
-      }
-    );
+    const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
 
     if (!project) {
       return res.status(404).json({
